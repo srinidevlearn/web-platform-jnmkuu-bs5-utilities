@@ -11,12 +11,12 @@
     <div class="card-header">Navigate</div>
     <div class="card-body">
       <a href="#helper-opacity" class="d-block">Opacity</a>
-      <details class="">
+      <details class="" open>
         <summary class="link-primary text-decoration-underline">Background Details</summary>
         <a href="#helper-bg" class="d-block ms-4">Background</a>
         <a href="#helper-bg-opacity" class="d-block ms-4">Background Opacity</a>
       </details>
-      <details class="">
+      <details class="" open>
         <summary class="link-primary text-decoration-underline">Borders Details</summary>
         <a href="#addictive-border" class="d-block ms-4">Additive Border</a>
         <a href="#subtractive-border" class="d-block ms-4">Subtractive Border</a>
@@ -28,6 +28,32 @@
       <a href="#overflow" class="d-block">Overflow</a>
       <a href="#interactions" class="d-block">Interactions</a>
       <a href="#float" class="d-block">Float</a>
+      <details class="" open>
+        <summary class="link-primary text-decoration-underline">Flex</summary>
+        <details class="" open>
+          <summary class="link-primary text-decoration-underline ms-4">Flex Containers</summary>
+          <a href="#flex" class="d-block ms-5">Flex</a>
+          <a href="#inline-flex" class="d-block ms-5">Inline Flex</a>
+        </details>
+        <details class="" open>
+          <summary class="link-primary text-decoration-underline ms-4">Flex Directions</summary>
+          <a href="#flex-row" class="d-block ms-5">Flex-row</a>
+          <a href="#flex-row-reverse" class="d-block ms-5">Flex-row-reverse</a>
+          <a href="#flex-column" class="d-block ms-5">Flex-column</a>
+          <a href="#flex-column-reverse" class="d-block ms-5">Flex-column-reverse</a>
+
+        </details>
+        <details class="" open>
+          <summary class="link-primary text-decoration-underline ms-4">Justified-content</summary>
+          <a href="#justify-content-start" class="d-block ms-5">Justify-content-start</a>
+          <a href="#justify-content-end" class="d-block ms-5">Justify-content-end</a>
+          <a href="#justify-content-center" class="d-block ms-5">Justify-content-center</a>
+          <a href="#justify-content-between" class="d-block ms-5">Justify-content-between</a>
+          <a href="#justify-content-evenly" class="d-block ms-5">Justify-content-evenly</a>
+          <a href="#justify-content-around" class="d-block ms-5">Justify-content-around</a>
+        </details>
+      </details>
+
     </div>
 
   </div>
@@ -189,34 +215,100 @@
   <div class="card">
     <div class="card-header">Interactions</div>
     <div class="card-body">
-    <div class="text-decoration-underline">user-select-all</div>
+      <div class="text-decoration-underline">user-select-all</div>
       <p class="user-select-all">
-      This paragraph will be entirely selected when clicked by the user.</p>
+        This paragraph will be entirely selected when clicked by the user.</p>
       <div class="text-decoration-underline">user-select-auto</div>
       <p class="user-select-auto">
 
-      This paragraph has default select behavior.</p>
+        This paragraph has default select behavior.</p>
       <div class="text-decoration-underline">user-select-none</div>
       <p class="user-select-none">
 
-      This paragraph will not be selectable when clicked by the user.</p>
+        This paragraph will not be selectable when clicked by the user.</p>
     </div>
   </div>
 </section>
- <section class="container my-3" id="float">
+<section class="container my-3" id="float">
   <div class="card">
     <div class="card-header">Float</div>
     <div class="card-body">
-        <div class="float-start">
-          Float start on all viewport sizes
+      <div class="float-start">
+        Float start on all viewport sizes
       </div><br>
-<div class="float-end">Float end on all viewport sizes</div><br>
-<div class="float-none">Don't float on all viewport sizes</div>
+      <div class="float-end">Float end on all viewport sizes</div><br>
+      <div class="float-none">Don't float on all viewport sizes</div>
     </div>
   </div>
 </section>
-
+<section class="container my-3" id="flex">
+  <div class="card">
+    <div class="card-header">Flex</div>
+    <div class="card-body">
+      <div class="d-flex">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+        <div class="flex-item">3</div>
+      </div>
+      <div class="d-flex">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+        <div class="flex-item">3</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="container my-3" id="inline-flex">
+  <div class="card">
+    <div class="card-header">Inline - Flex</div>
+    <div class="card-body">
+      <div class="d-inline-flex">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+        <div class="flex-item">3</div>
+      </div>
+      <div class="d-inline-flex">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+        <div class="flex-item">3</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="container my-3" id="flex-row">
+  <div class="card">
+    <div class="card-header">Flex - row</div>
+    <div class="card-body">
+      <div class="d-flex flex-row">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+        <div class="flex-item">3</div>
+      </div>
+    </div>
+  </div>
+</section>
+  <section class="container my-3" id="flex-row-reverse">
+  <div class="card">
+    <div class="card-header">Flex - row</div>
+    <div class="card-body">
+      <div class="d-flex flex-row-reverse">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+        <div class="flex-item">3</div>
+      </div>
+    </div>
+  </div>
+</section>
 <style>
+  .flex-item {
+    width: 100px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    background: rgba(192, 192, 192, 0.25);
+    border: 1px solid red;
+  }
+
   .box {
     width: 150px;
     height: 150px;
@@ -234,24 +326,17 @@
     margin: 10px;
   }
 
-  details>summary {
-    list-style: none;
-  }
-  .card-body .card{
-    margin:2rem 0px
+  .card-body .card {
+    margin: 2rem 0px
   }
 </style>
-    <section class="position-fixed invisible" id="floating-btn">
-      <div class="position-fixed bottom-0 end-0 m-3 mx-4">
-        <button
-          type="button"
-          class="btn rounded-pill btn-sm btn-primary"
-          onClick="moveToTop()"
-        >
-          &#8593;
-        </button>
-      </div>
-    </section>
+<section class="position-fixed invisible" id="floating-btn">
+  <div class="position-fixed bottom-0 end-0 m-3 mx-4">
+    <button type="button" class="btn rounded-pill btn-sm btn-primary" onClick="moveToTop()">
+      &#8593;
+    </button>
+  </div>
+</section>
 <script>
   function moveToTop() {
     return window.scrollTo({
@@ -259,12 +344,12 @@
       behavior: 'smooth'
     });
   }
- window.addEventListener('scroll',(event) => {
-   if(window.pageYOffset>=300){
-     document.getElementById('floating-btn').classList.replace('invisible','visible') 
-   }else{
-     document.getElementById('floating-btn').classList.replace('visible','invisible') 
-   }
-    console.log('Scrolling...',window.pageYOffset);
-});
+  window.addEventListener('scroll', (event) => {
+    if (window.pageYOffset >= 300) {
+      document.getElementById('floating-btn').classList.replace('invisible', 'visible')
+    } else {
+      document.getElementById('floating-btn').classList.replace('visible', 'invisible')
+    }
+    console.log('Scrolling...', window.pageYOffset);
+  });
 </script>
