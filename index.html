@@ -27,8 +27,7 @@
       </details>
       <a href="#overflow" class="d-block">Overflow</a>
       <a href="#interactions" class="d-block">Interactions</a>
-      
-
+      <a href="#float" class="d-block">Float</a>
     </div>
 
   </div>
@@ -204,6 +203,19 @@
     </div>
   </div>
 </section>
+ <section class="container my-3" id="float">
+  <div class="card">
+    <div class="card-header">Float</div>
+    <div class="card-body">
+        <div class="float-start">
+          Float start on all viewport sizes
+      </div><br>
+<div class="float-end">Float end on all viewport sizes</div><br>
+<div class="float-none">Don't float on all viewport sizes</div>
+    </div>
+  </div>
+</section>
+
 <style>
   .box {
     width: 150px;
@@ -229,3 +241,30 @@
     margin:2rem 0px
   }
 </style>
+    <section class="position-fixed invisible" id="floating-btn">
+      <div class="position-fixed bottom-0 end-0 m-3 mx-4">
+        <button
+          type="button"
+          class="btn rounded-pill btn-sm btn-primary"
+          onClick="moveToTop()"
+        >
+          &#8593;
+        </button>
+      </div>
+    </section>
+<script>
+  function moveToTop() {
+    return window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }
+ window.addEventListener('scroll',(event) => {
+   if(window.pageYOffset>=300){
+     document.getElementById('floating-btn').classList.replace('invisible','visible') 
+   }else{
+     document.getElementById('floating-btn').classList.replace('visible','invisible') 
+   }
+    console.log('Scrolling...',window.pageYOffset);
+});
+</script>
