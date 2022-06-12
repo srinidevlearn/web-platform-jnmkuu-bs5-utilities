@@ -1077,7 +1077,59 @@
             <div class="card-body">
               <div class="code-slot shadow rounded-3 p-3"></div>
             </div>
+          </div>
+        </section>
 
+        <section class="container my-3" id="align-self-stretch">
+          <div class="card">
+            <div class="card-header">Align-self-stretch</div>
+            <div class="card-body">
+              <div class="d-flex flex-wrap" style="height:200px">
+                <div class="flex-item align-self-stretch" style="height:unset">1</div>
+                <div class="flex-item align-self-stretch" style="height:75px">2</div>
+                <div class="flex-item align-self-stretch" style="height:unset">3</div>
+                <div class="flex-item align-self-stretch" style="height:unset">4</div>
+                <div class="flex-item align-self-stretch" style="height:unset">5</div>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="code-slot shadow rounded-3 p-3"></div>
+            </div>
+          </div>
+        </section>
+        <section class="container my-3" id="align-self-center">
+          <div class="card">
+            <div class="card-header">Align-self-center</div>
+            <div class="card-body">
+              <div class="d-flex" style="height:200px">
+                <div class="flex-item align-self-center" style="height:unset">1</div>
+                <div class="flex-item align-self-center" style="height:75px">2</div>
+                <div class="flex-item align-self-center" style="height:unset">3</div>
+                <div class="flex-item align-self-center" style="height:unset">4</div>
+                <div class="flex-item align-self-center" style="height:unset">5</div>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="code-slot shadow rounded-3 p-3"></div>
+            </div>
+          </div>
+        </section>
+         <section class="container my-3" id="align-self-start">
+          <div class="card">
+            <div class="card-header">Align-self-start</div>
+            <div class="card-body">
+              <div class="d-flex" style="height:200px">
+                <div class="flex-item align-self-start" style="height:unset">1</div>
+                <div class="flex-item align-self-start" style="height:75px">2</div>
+                <div class="flex-item align-self-start" style="height:unset">3</div>
+                <div class="flex-item align-self-start" style="height:unset">4</div>
+                <div class="flex-item align-self-start" style="height:unset">5</div>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="code-slot shadow rounded-3 p-3"></div>
+            </div>
+          </div>
         </section>
       </div>
     </div>
@@ -1110,6 +1162,16 @@
   })
 </script>
 <style>
+  .card-header{
+    border-top-left-radius:20px !important;
+    border-top--right-radius:20px !important;
+  }
+  .card{
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  }
+  .card,.code-slot,pre.prettyprint.prettyprinted{
+    border-radius:20px !important;
+      }
   /*! Color themes for Google Code Prettify | MIT License | github.com/jmblog/color-themes-for-google-code-prettify */
   .prettyprint {
     background: #131513;
