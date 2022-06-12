@@ -15,75 +15,13 @@
   crossorigin="anonymous"
 ></script>
 
-<style>
-  .flex-item {
-    width: 100px;
-    height: 50px;
-    line-height: 50px;
-    text-align: center;
-    background: rgba(192, 192, 192, 0.25);
-    border: 1px solid red;
-  }
-
-  .box {
-    width: 150px;
-    height: 150px;
-    line-height: 150px;
-    text-align: center;
-    background: rgba(192, 192, 192, 0.25);
-    margin: 10px;
-    border: 1px solid red;
-  }
-
-  .addictive-box {
-    width: 150px;
-    height: 150px;
-    background: rgba(192, 192, 192, 0.25);
-    margin: 10px;
-  }
-
-  .card-body .card {
-    margin: 2rem 0px;
-  }
-</style>
-<script>
-  function moveToTop() {
-    return window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    });
-  }
-  window.addEventListener('scroll', (event) => {
-    if (window.pageYOffset >= 500) {
-      document
-        .getElementById('floating-btn')
-        .classList.replace('invisible', 'visible');
-    } else {
-      document
-        .getElementById('floating-btn')
-        .classList.replace('visible', 'invisible');
-    }
-  });
-</script>
-<section class="position-fixed invisible" id="floating-btn" style="z-index: 99">
-  <div class="position-fixed bottom-0 end-0 m-3 mx-4">
-    <button
-      type="button"
-      class="btn rounded-pill btn-sm btn-primary"
-      onClick="moveToTop()"
-    >
-      &#8593;
-    </button>
-  </div>
-</section>
-
 <main>
   <div class="container-fluid">
     <div class="row">
       <div class="col-12 col-sm-12 col-md-4 col-lg-3">
         <section class="my-3 position-sticky top-0" id="navigate">
           <div class="card">
-            <div class="card-header">Navigate</div>
+            <div class="card-header fs-5 text-left">Navigate</div>
             <div class="card-body overflow-auto" style="height: 90vh">
               <a href="#helper-opacity" class="d-block">Opacity</a>
               <details class="" open>
@@ -259,6 +197,34 @@
                   >
                 </details>
               </details>
+              <a href="#positions" class="d-block ms-0">Position</a>
+              <a href="#shadow" class="d-block ms-0">Shadow</a>
+              <details class="" open>
+                <summary class="link-primary text-decoration-underline ms-0">
+                  Sizing
+                </summary>
+                <a href="#sizing-width" class="d-block ms-4">Width</a>
+                <a href="#sizing-height" class="d-block ms-4">Height</a>
+              </details>
+              <details class="" open>
+                <summary class="link-primary text-decoration-underline ms-0">
+                  Spacing
+                </summary>
+                <a href="#spacing-margin" class="d-block ms-4">Margin</a>
+                <a href="#spacing-padding" class="d-block ms-4">Padding</a>
+              </details>
+              <a href="#v-alignment" class="d-block ms-0">Vertical alignment</a>
+              <a href="#text-truncate" class="d-block ms-0">Text-truncate</a>
+              <a href="#v-ruler" class="d-block ms-0">Vertical Ruler</a>
+              <a href="#colored-link" class="d-block ms-0">Colored Link </a>
+              <a href="#a-ratio" class="d-block ms-0">Ratio</a>
+              <details class="" open>
+                <summary class="link-primary text-decoration-underline ms-0">
+                  Stacks
+                </summary>
+                <a href="#h-stack" class="d-block ms-4">Horizontal</a>
+                <a href="#v-stack" class="d-block ms-4">Vertical</a>
+              </details>
             </div>
           </div>
         </section>
@@ -266,7 +232,9 @@
       <div class="col-12 col-sm-12 col-md-8 col-lg-9">
         <section class="container my-3" id="helper-opacity">
           <div class="card">
-            <div class="card-header fs-5 text-center">Helper opacity text</div>
+            <div class="card-header fs-5 text-left fs-5 text-center">
+              Helper opacity text
+            </div>
             <div class="card-body">
               <div class="opacity-0">.opacity-0</div>
               <div class="opacity-25">.opacity-25 { opacity: .25; }</div>
@@ -281,7 +249,9 @@
         </section>
         <section class="container my-3" id="helper-bg">
           <div class="card">
-            <div class="card-header fs-5 text-center">Helper Background</div>
+            <div class="card-header fs-5 text-left fs-5 text-center">
+              Helper Background
+            </div>
             <div class="card-body">
               <div class="p-3 mb-2 bg-primary text-white">.bg-primary</div>
               <div class="p-3 mb-2 bg-secondary text-white">.bg-secondary</div>
@@ -305,7 +275,7 @@
 
         <section class="container my-3" id="helper-bg-opacity">
           <div class="card">
-            <div class="card-header fs-5 text-center">
+            <div class="card-header fs-5 text-left fs-5 text-center">
               Helper Background Opacity
             </div>
             <div class="card-body">
@@ -333,7 +303,9 @@
 
         <section class="container my-3" id="addictive-border">
           <div class="card" id="">
-            <div class="card-header fs-5 text-left">Additive borders</div>
+            <div class="card-header fs-5 text-left fs-5 text-left">
+              Additive borders
+            </div>
 
             <div class="card-body d-flex flex-wrap">
               <div class="addictive-box border border-danger">.border</div>
@@ -357,7 +329,9 @@
         </section>
         <section class="container my-3" id="subtractive-border">
           <div class="card">
-            <div class="card-header fs-5 text-left">Subtractive borders</div>
+            <div class="card-header fs-5 text-left fs-5 text-left">
+              Subtractive borders
+            </div>
 
             <div class="card-body d-flex flex-wrap">
               <div class="box border-0">.border-0</div>
@@ -373,7 +347,9 @@
         </section>
         <section class="container my-3" id="border-color">
           <div class="card bg-dark text-white">
-            <div class="card-header fs-5 text-left">Borders Colors</div>
+            <div class="card-header fs-5 text-left fs-5 text-left">
+              Borders Colors
+            </div>
 
             <div class="card-body d-flex flex-wrap">
               <div class="box border border-primary">.border-primary</div>
@@ -393,7 +369,9 @@
         </section>
         <section class="container my-3">
           <div class="card" id="border-width">
-            <div class="card-header fs-5 text-left">Borders Width</div>
+            <div class="card-header fs-5 text-left fs-5 text-left">
+              Borders Width
+            </div>
 
             <div class="card-body d-flex flex-wrap">
               <div class="box border border-1">.border-1</div>
@@ -409,7 +387,9 @@
         </section>
         <section class="container my-3" id="border-rounded">
           <div class="card">
-            <div class="card-header fs-5 text-left">Borders Rounded</div>
+            <div class="card-header fs-5 text-left fs-5 text-left">
+              Borders Rounded
+            </div>
 
             <div class="card-body d-flex flex-wrap">
               <div class="box border-danger border-2 rounded">.rounded</div>
@@ -439,7 +419,9 @@
         </section>
         <section class="container my-3" id="rounded-corners">
           <div class="card">
-            <div class="card-header fs-5 text-left">Rounded-corners</div>
+            <div class="card-header fs-5 text-left fs-5 text-left">
+              Rounded-corners
+            </div>
 
             <div class="card-body d-flex flex-wrap">
               <div class="box border-danger border-2 rounded">.rounded</div>
@@ -454,7 +436,9 @@
         </section>
         <section class="container my-3" id="overflow">
           <div class="card">
-            <div class="card-header">Overflow</div>
+            <div class="card-header fs-5 text-left fs-5 text-left">
+              Overflow
+            </div>
             <div class="card-body d-flex flex-wrap">
               <div class="box lh-sm overflow-auto">
                 <p>overflow-auto</p>
@@ -500,7 +484,9 @@
         </section>
         <section class="container my-3" id="interactions">
           <div class="card">
-            <div class="card-header">Interactions</div>
+            <div class="card-header fs-5 text-left fs-5 text-left">
+              Interactions
+            </div>
             <div class="card-body">
               <div class="text-decoration-underline">user-select-all</div>
               <p class="user-select-all">
@@ -523,7 +509,7 @@
         </section>
         <section class="container my-3" id="float">
           <div class="card">
-            <div class="card-header">Float</div>
+            <div class="card-header fs-5 text-left fs-5 text-left">Float</div>
             <div class="card-body">
               <div class="float-start">Float start on all viewport sizes</div>
               <br />
@@ -538,7 +524,7 @@
         </section>
         <section class="container my-3" id="flex">
           <div class="card">
-            <div class="card-header">Flex</div>
+            <div class="card-header fs-5 text-left fs-5 text-left">Flex</div>
             <div class="card-body">
               <div class="d-flex">
                 <div class="flex-item">1</div>
@@ -558,7 +544,9 @@
         </section>
         <section class="container my-3" id="inline-flex">
           <div class="card">
-            <div class="card-header">Inline - Flex</div>
+            <div class="card-header fs-5 text-left fs-5 text-left">
+              Inline - Flex
+            </div>
             <div class="card-body">
               <div class="d-inline-flex">
                 <div class="flex-item">1</div>
@@ -578,7 +566,9 @@
         </section>
         <section class="container my-3" id="flex-row">
           <div class="card">
-            <div class="card-header">Flex - row</div>
+            <div class="card-header fs-5 text-left fs-5 text-left">
+              Flex - row
+            </div>
             <div class="card-text text-center bg-secondary lh-base text-white">
               Display flex items horizontally
             </div>
@@ -596,7 +586,9 @@
         </section>
         <section class="container my-3" id="flex-row-reverse">
           <div class="card">
-            <div class="card-header">Flex - row</div>
+            <div class="card-header fs-5 text-left fs-5 text-left">
+              Flex - row
+            </div>
             <div class="card-text text-center bg-secondary lh-base text-white">
               Display flex items horizontally in opposite direction
             </div>
@@ -630,7 +622,7 @@
         </section>
         <section class="container my-3" id="flex-column">
           <div class="card">
-            <div class="card-header">Flex Column</div>
+            <div class="card-header fs-5 text-left">Flex Column</div>
             <div class="card-text text-center bg-secondary lh-base text-white">
               Display flex items vertically
             </div>
@@ -648,7 +640,7 @@
         </section>
         <section class="container my-3" id="flex-column-reverse">
           <div class="card">
-            <div class="card-header">Flex Column Reverse</div>
+            <div class="card-header fs-5 text-left">Flex Column Reverse</div>
             <div class="card-text text-center bg-secondary lh-base text-white">
               Display flex items vertically reverse
             </div>
@@ -666,7 +658,7 @@
         </section>
         <section class="container my-3" id="justify-content-start">
           <div class="card">
-            <div class="card-header">Justify-content-start</div>
+            <div class="card-header fs-5 text-left">Justify-content-start</div>
             <div class="card-text text-center bg-secondary lh-base text-white">
               Display flex items from the start (left-aligned)
             </div>
@@ -684,7 +676,7 @@
         </section>
         <section class="container my-3" id="justify-content-end">
           <div class="card">
-            <div class="card-header">Justify-content-start</div>
+            <div class="card-header fs-5 text-left">Justify-content-start</div>
             <div class="card-text text-center bg-secondary lh-base text-white">
               Display flex items from the end (right-aligned)
             </div>
@@ -702,7 +694,7 @@
         </section>
         <section class="container my-3" id="justify-content-center">
           <div class="card">
-            <div class="card-header">Justify-content-center</div>
+            <div class="card-header fs-5 text-left">Justify-content-center</div>
             <div class="card-text text-center bg-secondary lh-base text-white">
               Display flex items to the center
             </div>
@@ -720,7 +712,9 @@
         </section>
         <section class="container my-3" id="justify-content-between">
           <div class="card">
-            <div class="card-header">Justify-content-between</div>
+            <div class="card-header fs-5 text-left">
+              Justify-content-between
+            </div>
             <div class="card-text text-center bg-secondary lh-base text-white">
               Display flex items in "between"
             </div>
@@ -738,7 +732,9 @@
         </section>
         <section class="container my-3" id="justify-content-evenly">
           <div class="card">
-            <div class="card-header">Justify-content-between</div>
+            <div class="card-header fs-5 text-left">
+              Justify-content-between
+            </div>
             <div class="card-text text-center bg-secondary lh-base text-white">
               Display flex items in "evenly"
             </div>
@@ -756,7 +752,7 @@
         </section>
         <section class="container my-3" id="justify-content-around">
           <div class="card">
-            <div class="card-header">Justify-content-around</div>
+            <div class="card-header fs-5 text-left">Justify-content-around</div>
             <div class="card-text text-center bg-secondary lh-base text-white">
               Display flex items in "around"
             </div>
@@ -774,7 +770,7 @@
         </section>
         <section class="container my-3" id="flex-fill">
           <div class="card">
-            <div class="card-header">Flex- fill</div>
+            <div class="card-header fs-5 text-left">Flex- fill</div>
             <div class="card-text text-center bg-secondary lh-base text-white">
               Display flex items into equal width
             </div>
@@ -792,7 +788,7 @@
         </section>
         <section class="container my-3" id="flex-grow-1">
           <div class="card">
-            <div class="card-header">Flex-grow-1</div>
+            <div class="card-header fs-5 text-left">Flex-grow-1</div>
             <div class="card-text text-center bg-secondary lh-base text-white">
               Display flex items make into grow
             </div>
@@ -810,7 +806,7 @@
         </section>
         <section class="container my-3" id="flex-grow-0">
           <div class="card">
-            <div class="card-header">Flex-grow-0</div>
+            <div class="card-header fs-5 text-left">Flex-grow-0</div>
             <div class="card-text text-center bg-secondary lh-base text-white">
               Display flex items make into grow
             </div>
@@ -829,7 +825,7 @@
 
         <section class="container my-3" id="flex-shrink-1">
           <div class="card">
-            <div class="card-header">Flex-shrink-1</div>
+            <div class="card-header fs-5 text-left">Flex-shrink-1</div>
             <div class="card-text text-center bg-secondary lh-base text-white">
               Display flex items make into shrink.Tells browser what the minimum
               size of an element should be. The default value is 1, which is
@@ -849,7 +845,7 @@
 
         <section class="container my-3" id="flex-wrap">
           <div class="card">
-            <div class="card-header">Flex-wrap</div>
+            <div class="card-header fs-5 text-left">Flex-wrap</div>
             <div class="card-text text-center bg-secondary lh-base text-white">
               Wrap flex items
             </div>
@@ -870,7 +866,7 @@
         </section>
         <section class="container my-3" id="flex-wrap-reverse">
           <div class="card">
-            <div class="card-header">Flex-wrap-reverse</div>
+            <div class="card-header fs-5 text-left">Flex-wrap-reverse</div>
             <div class="card-text text-center bg-secondary lh-base text-white">
               Wrap flex items in reverse
             </div>
@@ -891,7 +887,7 @@
         </section>
         <section class="container my-3" id="flex-wrap-nowrap">
           <div class="card">
-            <div class="card-header">Flex-nowrap</div>
+            <div class="card-header fs-5 text-left">Flex-nowrap</div>
             <div class="card-text text-center bg-secondary lh-base text-white">
               No Wrap of flex items
             </div>
@@ -912,7 +908,7 @@
         </section>
         <section class="container my-3" id="align-item-start">
           <div class="card">
-            <div class="card-header">Align-items-start</div>
+            <div class="card-header fs-5 text-left">Align-items-start</div>
             <div class="card-text text-center bg-secondary lh-base text-white">
               align flex items vertically need to specify height
             </div>
@@ -946,7 +942,7 @@
         </section>
         <section class="container my-3" id="align-item-end">
           <div class="card">
-            <div class="card-header">Align-items-end</div>
+            <div class="card-header fs-5 text-left">Align-items-end</div>
             <div class="card-text text-center bg-secondary lh-base text-white">
               align flex items vertically to end need to specify height
             </div>
@@ -981,7 +977,7 @@
 
         <section class="container my-3" id="align-item-center">
           <div class="card">
-            <div class="card-header">Align-items-center</div>
+            <div class="card-header fs-5 text-left">Align-items-center</div>
             <div class="card-text text-center bg-secondary lh-base text-white">
               align flex items vertically to center need to specify height
             </div>
@@ -1016,7 +1012,7 @@
 
         <section class="container my-3" id="align-item-baseline">
           <div class="card">
-            <div class="card-header">Align-items-baseline</div>
+            <div class="card-header fs-5 text-left">Align-items-baseline</div>
             <div class="card-text text-center bg-secondary lh-base text-white">
               align flex items vertically to baseline need to specify height
             </div>
@@ -1051,7 +1047,7 @@
 
         <section class="container my-3" id="align-item-stretch">
           <div class="card">
-            <div class="card-header">Align-items-stretch</div>
+            <div class="card-header fs-5 text-left">Align-items-stretch</div>
             <div class="card-text text-center bg-secondary lh-base text-white">
               align flex items vertically to stretch need to specify height
             </div>
@@ -1107,7 +1103,7 @@
 
         <section class="container my-3" id="align-content-start">
           <div class="card">
-            <div class="card-header">Align-content-start</div>
+            <div class="card-header fs-5 text-left">Align-content-start</div>
             <div class="card-body">
               <div
                 class="d-flex align-content-start flex-wrap"
@@ -1135,7 +1131,7 @@
 
         <section class="container my-3" id="align-content-end">
           <div class="card">
-            <div class="card-header">Align-content-end</div>
+            <div class="card-header fs-5 text-left">Align-content-end</div>
             <div class="card-body">
               <div
                 class="d-flex align-content-end flex-wrap"
@@ -1163,7 +1159,7 @@
 
         <section class="container my-3" id="align-content-center">
           <div class="card">
-            <div class="card-header">Align-content-center</div>
+            <div class="card-header fs-5 text-left">Align-content-center</div>
             <div class="card-body">
               <div
                 class="d-flex align-content-center flex-wrap"
@@ -1191,7 +1187,7 @@
 
         <section class="container my-3" id="align-content-between">
           <div class="card">
-            <div class="card-header">Align-content-between</div>
+            <div class="card-header fs-5 text-left">Align-content-between</div>
             <div class="card-body">
               <div
                 class="d-flex align-content-between flex-wrap"
@@ -1219,7 +1215,7 @@
 
         <section class="container my-3" id="align-content-around">
           <div class="card">
-            <div class="card-header">Align-content-around</div>
+            <div class="card-header fs-5 text-left">Align-content-around</div>
             <div class="card-body">
               <div
                 class="d-flex align-content-around flex-wrap"
@@ -1247,7 +1243,7 @@
 
         <section class="container my-3" id="align-content-stretch">
           <div class="card">
-            <div class="card-header">Align-content-stretch</div>
+            <div class="card-header fs-5 text-left">Align-content-stretch</div>
             <div class="card-body">
               <div
                 class="d-flex align-content-stretch flex-wrap"
@@ -1268,7 +1264,7 @@
 
         <section class="container my-3" id="align-self-stretch">
           <div class="card">
-            <div class="card-header">Align-self-stretch</div>
+            <div class="card-header fs-5 text-left">Align-self-stretch</div>
             <div class="card-body">
               <div class="d-flex flex-wrap" style="height: 200px">
                 <div class="flex-item align-self-stretch" style="height: unset">
@@ -1295,7 +1291,7 @@
         </section>
         <section class="container my-3" id="align-self-center">
           <div class="card">
-            <div class="card-header">Align-self-center</div>
+            <div class="card-header fs-5 text-left">Align-self-center</div>
             <div class="card-body">
               <div class="d-flex" style="height: 200px">
                 <div class="flex-item align-self-center" style="height: unset">
@@ -1322,7 +1318,7 @@
         </section>
         <section class="container my-3" id="align-self-start">
           <div class="card">
-            <div class="card-header">Align-self-start</div>
+            <div class="card-header fs-5 text-left">Align-self-start</div>
             <div class="card-body">
               <div class="d-flex" style="height: 200px">
                 <div class="flex-item align-self-start" style="height: unset">
@@ -1349,7 +1345,7 @@
         </section>
         <section class="container my-3" id="align-self-end">
           <div class="card">
-            <div class="card-header">Align-self-end</div>
+            <div class="card-header fs-5 text-left">Align-self-end</div>
             <div class="card-body">
               <div class="d-flex" style="height: 200px">
                 <div class="flex-item align-self-end" style="height: unset">
@@ -1376,7 +1372,7 @@
         </section>
         <section class="container my-3" id="align-self-baseline">
           <div class="card">
-            <div class="card-header">Align-self-baseline</div>
+            <div class="card-header fs-5 text-left">Align-self-baseline</div>
             <div class="card-body">
               <div class="d-flex" style="height: 200px">
                 <div
@@ -1413,58 +1409,448 @@
             </div>
           </div>
         </section>
+        <section class="container my-3" id="positions">
+          <div class="card">
+            <div class="card-header fs-5 text-left">Positions</div>
+            <div class="card-body">
+              <div class="position-relative" style="height: 200px">
+                <div class="position-absolute top-0 start-0 mini-card"></div>
+                <div class="position-absolute top-0 end-0 mini-card"></div>
+                <div class="position-absolute top-50 start-50 mini-card"></div>
+                <div class="position-absolute bottom-50 end-50 mini-card"></div>
+                <div class="position-absolute bottom-0 start-0 mini-card"></div>
+                <div class="position-absolute bottom-0 end-0 mini-card"></div>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="code-slot shadow rounded-3 p-3"></div>
+            </div>
+          </div>
+        </section>
+        <section class="container my-3" id="shadow">
+          <div class="card">
+            <div class="card-header fs-5 text-left">Shadow</div>
+
+            <div class="card-body">
+              <div class="shadow-none p-3 mb-5 bg-light rounded">No shadow</div>
+              <div class="shadow-sm p-3 mb-5 bg-body rounded">Small shadow</div>
+              <div class="shadow p-3 mb-5 bg-body rounded">Regular shadow</div>
+              <div class="shadow-lg p-3 mb-5 bg-body rounded">
+                Larger shadow
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="code-slot shadow rounded-3 p-3"></div>
+            </div>
+          </div>
+        </section>
+        <section class="container" id="sizing-width">
+          <div class="card">
+            <div class="card-header fs-5 text-left">Sizing Width</div>
+
+            <div class="card-body">
+              <div class="w-25 p-3" style="background-color: #eee">
+                Width 25%
+              </div>
+              <div class="w-50 p-3" style="background-color: #eee">
+                Width 50%
+              </div>
+              <div class="w-75 p-3" style="background-color: #eee">
+                Width 75%
+              </div>
+              <div class="w-100 p-3" style="background-color: #eee">
+                Width 100%
+              </div>
+              <div class="w-auto p-3" style="background-color: #eee">
+                Width auto
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="code-slot shadow rounded-3 p-3"></div>
+            </div>
+          </div>
+        </section>
+        <section class="container my-3" id="sizing-height">
+          <div class="card">
+            <div class="card-header fs-5 text-left">Sizing height</div>
+
+            <div class="card-body">
+              <div style="height: 200px">
+                <div
+                  class="h-25 d-inline-block"
+                  style="width: 120px; background-color: rgba(0, 0, 255, 0.1)"
+                >
+                  Height 25%
+                </div>
+                <div
+                  class="h-50 d-inline-block"
+                  style="width: 120px; background-color: rgba(0, 0, 255, 0.1)"
+                >
+                  Height 50%
+                </div>
+                <div
+                  class="h-75 d-inline-block"
+                  style="width: 120px; background-color: rgba(0, 0, 255, 0.1)"
+                >
+                  Height 75%
+                </div>
+                <div
+                  class="h-100 d-inline-block"
+                  style="width: 120px; background-color: rgba(0, 0, 255, 0.1)"
+                >
+                  Height 100%
+                </div>
+                <div
+                  class="h-auto d-inline-block"
+                  style="width: 120px; background-color: rgba(0, 0, 255, 0.1)"
+                >
+                  Height auto
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="code-slot shadow rounded-3 p-3"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="container my-3" id="spacing-padding">
+          <div class="card">
+            <div class="card-header fs-5 text-left">Spacing-Padding</div>
+
+            <div class="card-body">
+              <div style="height: 200px" class="overflow-auto">
+                <div class="box px-1">.px-1 to 5</div>
+                <div class="box ps-1">.ps-1 to 5</div>
+                <div class="box pe-1">.pe-1 to 5</div>
+                <div class="box pt-1">.pt-1 to 5</div>
+                <div class="box pb-1">.pb-1 to 5</div>
+                <div class="box py-1">.py-1 to 5</div>
+                <div class="box p-1">.p-1 to 5</div>
+              </div>
+            </div>
+
+            <div class="card-body">
+              <div class="code-slot shadow rounded-3 p-3"></div>
+            </div>
+          </div>
+        </section>
+        <section class="container my-3" id="spacing-margin">
+          <div class="card">
+            <div class="card-header fs-5 text-left">Spacing-margin</div>
+
+            <div class="card-body">
+              <div style="height: 200px" class="overflow-auto">
+                <div class="box mx-1">.mx-1 to 5 and auto</div>
+                <div class="box ms-1">.ms-1 to 5 and auto</div>
+                <div class="box me-1">.me-1 to 5 and auto</div>
+                <div class="box mt-1">.mt-1 to 5 and auto</div>
+                <div class="box mb-1">.mb-1 to 5 and auto</div>
+                <div class="box my-1">.my-1 to 5 and auto</div>
+                <div class="box m-1">.m-1 to 5 and auto</div>
+              </div>
+            </div>
+
+            <div class="card-body">
+              <div class="code-slot shadow rounded-3 p-3"></div>
+            </div>
+          </div>
+        </section>
+        <section class="container my-3" id="v-alignment">
+          <div class="card">
+            <div class="card-header fs-5 text-left">Vertical-alignment</div>
+            <div class="card-text mx-auto">
+              <mark>Note : </mark> inline, inline-block, elements only will be
+              affected
+            </div>
+
+            <div class="card-body">
+              <div style="" class="overflow-auto">
+                <style>
+                  #v-alignment .overflow-auto span {
+                    height: 100px;
+                    display: inline-block;
+                  }
+                </style>
+                <span class="align-baseline">baseline</span>
+                <span class="align-top">top</span>
+                <span class="align-middle">middle</span>
+                <span class="align-bottom">bottom</span>
+                <span class="align-text-top">text-top</span>
+                <span class="align-text-bottom">text-bottom</span>
+              </div>
+            </div>
+
+            <div class="card-body">
+              <div class="code-slot shadow rounded-3 p-3"></div>
+            </div>
+          </div>
+        </section>
+        <section class="container my-3" id="text-truncate">
+          <div class="card">
+            <div class="card-header fs-5 text-left">Text-truncate</div>
+
+            <div class="card-body">
+              <div class="row">
+                <div class="col-2 text-truncate">
+                  This text is quite long, and will be truncated once displayed.
+                </div>
+              </div>
+
+              <!-- Inline level -->
+              <span
+                class="d-inline-block text-truncate"
+                style="max-width: 150px"
+              >
+                This text is quite long, and will be truncated once displayed.
+              </span>
+            </div>
+
+            <div class="card-body">
+              <div class="code-slot shadow rounded-3 p-3"></div>
+            </div>
+          </div>
+        </section>
+        <section class="container my-3" id="v-ruler">
+          <div class="card">
+            <div class="card-header fs-5 text-left">Vertical-Ruler</div>
+
+            <div class="card-body">
+              <div class="vr"></div>
+              <div class="d-flex" style="height: 200px">
+                <div class="vr"></div>
+              </div>
+            </div>
+
+            <div class="card-body">
+              <div class="code-slot shadow rounded-3 p-3"></div>
+            </div>
+          </div>
+        </section>
+        <section class="container my-3" id="colored-link">
+          <div class="card">
+            <div class="card-header fs-5 text-left">Colored-Link</div>
+
+            <div class="card-body">
+              <a href="#" class="link-primary">Primary link</a>
+              <a href="#" class="link-secondary">Secondary link</a>
+              <a href="#" class="link-success">Success link</a>
+              <a href="#" class="link-danger">Danger link</a>
+              <a href="#" class="link-warning">Warning link</a>
+              <a href="#" class="link-info">Info link</a>
+              <a href="#" class="link-light">Light link</a>
+              <a href="#" class="link-dark">Dark link</a>
+            </div>
+
+            <div class="card-body">
+              <div class="code-slot shadow rounded-3 p-3"></div>
+            </div>
+          </div>
+        </section>
+        <section class="container my-3" id="h-stack">
+          <div class="card">
+            <div class="card-header fs-5 text-left">horizontal-stack</div>
+
+            <div class="card-body">
+              <div class="hstack gap-3">
+                <div class="bg-light border">First item</div>
+                <div class="bg-light border">Second item</div>
+                <div class="bg-light border">Third item</div>
+              </div>
+
+              <div class="hstack gap-3 my-2">
+                <div class="bg-light border">First item</div>
+                <div class="bg-light border ms-auto">Second item</div>
+                <div class="bg-light border">Third item</div>
+              </div>
+              <div class="hstack gap-3">
+                <div class="bg-light border">First item</div>
+                <div class="bg-light border ms-auto">Second item</div>
+                <div class="vr"></div>
+                <div class="bg-light border">Third item</div>
+              </div>
+            </div>
+
+            <div class="card-body">
+              <div class="code-slot shadow rounded-3 p-3"></div>
+            </div>
+          </div>
+        </section>
+        <section class="container my-3" id="v-stack">
+          <div class="card">
+            <div class="card-header fs-5 text-left">vertical-stack</div>
+
+            <div class="card-body">
+              <div class="vstack gap-3">
+                <div class="bg-light border">First item</div>
+                <div class="bg-light border">Second item</div>
+                <div class="bg-light border">Third item</div>
+              </div>
+
+              <div class="vstack gap-2 col-md-5 mx-auto">
+                <button type="button" class="btn btn-secondary">
+                  Save changes
+                </button>
+                <button type="button" class="btn btn-outline-secondary">
+                  Cancel
+                </button>
+              </div>
+            </div>
+
+            <div class="card-body">
+              <div class="code-slot shadow rounded-3 p-3"></div>
+            </div>
+          </div>
+        </section>
+        <section class="container my-3" id="a-ratio">
+          <div class="card">
+            <div class="card-header fs-5 text-left">aspect-ratio</div>
+
+            <div class="card-body my-2">
+              <div class="ratio ratio-16x9 my-2">
+                <iframe
+                  class="card"
+                  src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0"
+                  title="YouTube video"
+                  allowfullscreen
+                ></iframe>
+                <small class="d-block text-center text-danger"
+                  >ratio ratio-16x9</small
+                >
+              </div>
+
+              <div class="ratio ratio-1x1 my-2">
+                <iframe
+                  class="card"
+                  src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0"
+                  title="YouTube video"
+                  allowfullscreen
+                ></iframe>
+                <small class="d-block text-center text-danger"
+                  >ratio ratio-1x1</small
+                >
+              </div>
+              <div class="ratio ratio-4x3 my-2">
+                <iframe
+                  class="card"
+                  src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0"
+                  title="YouTube video"
+                  allowfullscreen
+                ></iframe>
+                <small class="d-block text-center text-danger"
+                  >ratio ratio-4x3</small
+                >
+              </div>
+              <div class="ratio ratio-21x9 my-2">
+                <iframe
+                  class="card"
+                  src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0"
+                  title="YouTube video"
+                  allowfullscreen
+                ></iframe>
+                <small class="d-block text-center text-danger"
+                  >ratio ratio-21x9</small
+                >
+              </div>
+            </div>
+
+            <div class="card-body">
+              <div class="code-slot shadow rounded-3 p-3"></div>
+            </div>
+          </div>
+        </section>
       </div>
     </div>
   </div>
+
+  <section class="globalStyles">
+    <div class="card" id="stylesdeclarations">
+      <div class="card-header fs-5 text-left">Required styles</div>
+      <div class="card-body">
+        <style>
+          .flex-item {
+            width: 100px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            background: rgba(192, 192, 192, 0.25);
+            border: 1px solid red;
+          }
+
+          .box {
+            width: 150px;
+            height: 150px;
+            line-height: 150px;
+            text-align: center;
+            background: rgba(192, 192, 192, 0.25);
+            margin: 10px;
+            border: 1px solid red;
+          }
+
+          .mini-card {
+            width: 20px;
+            height: 20px;
+            background: silver;
+          }
+
+          .addictive-box {
+            width: 150px;
+            height: 150px;
+            background: rgba(192, 192, 192, 0.25);
+            margin: 10px;
+          }
+
+          .card-body .card {
+            margin: 2rem 0px;
+          }
+
+          .card-header {
+            border-top-left-radius: 20px !important;
+            border-top-right-radius: 20px !important;
+            border-bottom: none;
+          }
+
+          .card {
+            box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1),
+              0 1px 2px -1px rgb(0 0 0 / 0.1);
+            border: none;
+          }
+
+          .card,
+          .code-slot,
+          /**
+          plugin prettyprint
+          **/
+          pre.prettyprint.prettyprinted {
+            border-radius: 20px !important;
+          }
+        </style>
+      </div>
+      <div class="card-body">
+        <div class="code-slot shadow rounded-3 p-3"></div>
+      </div>
+    </div>
+  </section>
+
+  <section
+    class="position-fixed invisible"
+    id="floating-btn"
+    style="z-index: 99"
+  >
+    <div class="position-fixed bottom-0 end-0 m-3 mx-4">
+      <button
+        type="button"
+        class="btn rounded-pill btn-sm btn-primary"
+        onClick="moveToTop()"
+      >
+        &#8593;
+      </button>
+    </div>
+  </section>
 </main>
 <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
 
-<script>
-  console.clear();
-  var doc = document.querySelectorAll('*[id]:not([id=""])');
-  doc.forEach((item, index) => {
-    var codeSlot = item.querySelector('.code-slot');
-    if (codeSlot) {
-      var code = item.querySelector('section > .card .card-body');
-      codeSlot.appendChild(createDetailSummary(code));
-    }
-
-    function createDetailSummary(node) {
-      const details = document.createElement('details');
-      const p1 = document.createElement('summary');
-      var node = node.cloneNode(true);
-      const p2 = document.createElement('pre');
-      p1.textContent = 'show code snippet';
-      p2.classList.add('prettyprint');
-      p2.textContent = node.innerHTML;
-      details.appendChild(p1);
-      details.appendChild(p2);
-      return details;
-    }
-  });
-</script>
 <style>
-  div .card-body .card {
-    margin-top: 20px;
-  }
-  .card-header {
-    border-top-left-radius: 20px !important;
-    border-top--right-radius: 20px !important;
-    border-bottom: none;
-    font-size: 2rem !important;
-  }
-
-  .card {
-    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-    border: none;
-  }
-
-  .card,
-  .code-slot,
-  pre.prettyprint.prettyprinted {
-    border-radius: 20px !important;
-  }
-
   /*! Color themes for Google Code Prettify | MIT License | github.com/jmblog/color-themes-for-google-code-prettify */
   .prettyprint {
     background: #131513;
@@ -1556,3 +1942,62 @@
     }
   }
 </style>
+<script id="scroll_code_snippet">
+  // function responsible for making scroll to move top
+  function moveToTop() {
+    return window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  }
+  // listen for scroll event
+  window.addEventListener('scroll', (event) => {
+    if (window.pageYOffset >= 500) {
+      // toggle invisible and visible to floating button
+      document
+        .getElementById('floating-btn')
+        .classList.replace('invisible', 'visible');
+    } else {
+      // toggle visible and invisible to floating button
+      document
+        .getElementById('floating-btn')
+        .classList.replace('visible', 'invisible');
+    }
+  });
+  // query all id inside dom element with not having id=""
+  var doc = document.querySelectorAll('*[id]:not([id=""])');
+  // iterate all queried id
+  doc.forEach((item, index) => {
+    // target code-slot
+    var codeSlot = item.querySelector('.code-slot');
+    // check valid code-slot
+    if (codeSlot) {
+      // query first card body from all cards
+      var code = item.querySelector('section > .card .card-body');
+      // dynamically append show code snipets
+      codeSlot.appendChild(createDetailSummary(code));
+    }
+  });
+  // responsible for details summary and code block
+  function createDetailSummary(node) {
+    const details = document.createElement('details');
+    const p1 = document.createElement('summary');
+    var node = node.cloneNode(true);
+    const p2 = document.createElement('pre');
+    p1.textContent = 'show code snippet';
+    p2.classList.add('prettyprint');
+    // all html typed code were inserted as textcontent
+    p2.textContent = node.innerHTML;
+    details.appendChild(p1);
+    details.appendChild(p2);
+    return details;
+  }
+  addJsSnippets();
+
+  function addJsSnippets() {
+    var snippet = document.querySelector('#scroll_code_snippet');
+    var jsCode = document.querySelector('#js-code');
+    jsCode.textContent = snippet.innerHTML;
+    codeSlot.appendChild(createDetailSummary(snippet));
+  }
+</script>
