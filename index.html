@@ -6,6 +6,59 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
+<style>
+  .flex-item {
+    width: 100px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    background: rgba(192, 192, 192, 0.25);
+    border: 1px solid red;
+  }
+
+  .box {
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    text-align: center;
+    background: rgba(192, 192, 192, 0.25);
+    margin: 10px;
+    border: 1px solid red;
+  }
+
+  .addictive-box {
+    width: 150px;
+    height: 150px;
+    background: rgba(192, 192, 192, 0.25);
+    margin: 10px;
+  }
+
+  .card-body .card {
+    margin: 2rem 0px
+  }
+</style>
+<script>
+  function moveToTop() {
+    return window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }
+  window.addEventListener('scroll', (event) => {
+    if (window.pageYOffset >= 500) {
+      document.getElementById('floating-btn').classList.replace('invisible', 'visible')
+    } else {
+      document.getElementById('floating-btn').classList.replace('visible', 'invisible')
+    }
+  });
+</script>
+<section class="position-fixed invisible" id="floating-btn" style="z-index:99">
+  <div class="position-fixed bottom-0 end-0 m-3 mx-4">
+    <button type="button" class="btn rounded-pill btn-sm btn-primary" onClick="moveToTop()">
+      &#8593;
+    </button>
+  </div>
+</section>
 <section class="container my-3" id="navigate">
   <div class="card">
     <div class="card-header">Navigate</div>
@@ -51,6 +104,49 @@
           <a href="#justify-content-between" class="d-block ms-5">Justify-content-between</a>
           <a href="#justify-content-evenly" class="d-block ms-5">Justify-content-evenly</a>
           <a href="#justify-content-around" class="d-block ms-5">Justify-content-around</a>
+        </details>
+        <a href="#flex-fill" class="d-block ms-4">Flex - fill</a>
+        <details class="" open>
+          <summary class="link-primary text-decoration-underline ms-4">Flex-grow</summary>
+          <a href="#flex-grow-0" class="d-block ms-5">Flex-grow-0</a>
+          <a href="#flex-grow-1" class="d-block ms-5">Flex-grow-1</a>
+        </details>
+        <details class="" open>
+          <summary class="link-primary text-decoration-underline ms-4">Flex-shrink</summary>
+          <a href="#flex-shrink-0" class="d-block ms-5">Flex-shrink-0</a>
+          <a href="#flex-shrink-1" class="d-block ms-5">Flex-shrink-1</a>
+        </details>
+        <details class="" open>
+          <summary class="link-primary text-decoration-underline ms-4">Wrap</summary>
+          <a href="#flex-wrap" class="d-block ms-5">Flex-wrap</a>
+          <a href="#flex-wrap-reverse" class="d-block ms-5">Flex-wrap-reverse</a>
+          <a href="#flex-wrap-nowrap" class="d-block ms-5">Flex-wrap-no-wrap</a>
+
+        </details>
+        <details class="" open>
+          <summary class="link-primary text-decoration-underline ms-4">Align-content</summary>
+          <a href="#align-content-start" class="d-block ms-5">Align-content-start</a>
+          <a href="#align-content-end" class="d-block ms-5">Align-content-end</a>
+          <a href="#align-content-center" class="d-block ms-5">Align-content-center</a>
+          <a href="#align-content-between" class="d-block ms-5">Align-content-between</a>
+          <a href="#align-content-around" class="d-block ms-5">Align-content-around</a>
+          <a href="#align-content-stretch" class="d-block ms-5">Align-content-stretch</a>
+        </details>
+        <details class="" open>
+          <summary class="link-primary text-decoration-underline ms-4">Align-Items</summary>
+          <a href="#align-item-start" class="d-block ms-5">Align-item-start</a>
+          <a href="#align-item-end" class="d-block ms-5">Align-item-end</a>
+          <a href="#align-item-center" class="d-block ms-5">Align-item-center</a>
+          <a href="#align-item-baseline" class="d-block ms-5">Align-item-baseline</a>
+          <a href="#align-item-stretch" class="d-block ms-5">Align-item-stretch</a>
+        </details>
+        <details class="" open>
+          <summary class="link-primary text-decoration-underline ms-4">Align-Self</summary>
+          <a href="#align-self-start" class="d-block ms-5">Align-self-start</a>
+          <a href="#align-self-end" class="d-block ms-5">Align-self-end</a>
+          <a href="#align-self-center" class="d-block ms-5">Align-self-center</a>
+          <a href="#align-self-baseline" class="d-block ms-5">Align-self-baseline</a>
+          <a href="#align-self-stretch" class="d-block ms-5">Align-self-stretch</a>
         </details>
       </details>
 
@@ -278,6 +374,8 @@
 <section class="container my-3" id="flex-row">
   <div class="card">
     <div class="card-header">Flex - row</div>
+    <div class="card-text text-center bg-secondary lh-base text-white">Display flex items horizontally
+    </div>
     <div class="card-body">
       <div class="d-flex flex-row">
         <div class="flex-item">1</div>
@@ -287,9 +385,11 @@
     </div>
   </div>
 </section>
-  <section class="container my-3" id="flex-row-reverse">
+<section class="container my-3" id="flex-row-reverse">
   <div class="card">
     <div class="card-header">Flex - row</div>
+    <div class="card-text text-center bg-secondary lh-base text-white">Display flex items horizontally in opposite direction
+    </div>
     <div class="card-body">
       <div class="d-flex flex-row-reverse">
         <div class="flex-item">1</div>
@@ -297,59 +397,600 @@
         <div class="flex-item">3</div>
       </div>
     </div>
+    <div class="card-body">
+      <div class="d-flex flex-row-reverse">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+        <div class="flex-item">3</div>
+        <div class="flex-item">4</div>
+        <div class="flex-item">5</div>
+        <div class="flex-item">6</div>
+        <div class="flex-item">1</div>
+        <div class="flex-item">7</div>
+        <div class="flex-item">8</div>
+        <div class="flex-item">1</div>
+        <div class="flex-item">9</div>
+        <div class="flex-item">10</div>
+      </div>
+    </div>
   </div>
 </section>
-<style>
-  .flex-item {
-    width: 100px;
-    height: 50px;
-    line-height: 50px;
-    text-align: center;
-    background: rgba(192, 192, 192, 0.25);
-    border: 1px solid red;
-  }
-
-  .box {
-    width: 150px;
-    height: 150px;
-    line-height: 150px;
-    text-align: center;
-    background: rgba(192, 192, 192, 0.25);
-    margin: 10px;
-    border: 1px solid red;
-  }
-
-  .addictive-box {
-    width: 150px;
-    height: 150px;
-    background: rgba(192, 192, 192, 0.25);
-    margin: 10px;
-  }
-
-  .card-body .card {
-    margin: 2rem 0px
-  }
-</style>
-<section class="position-fixed invisible" id="floating-btn">
-  <div class="position-fixed bottom-0 end-0 m-3 mx-4">
-    <button type="button" class="btn rounded-pill btn-sm btn-primary" onClick="moveToTop()">
-      &#8593;
-    </button>
+<section class="container my-3" id="flex-column">
+  <div class="card">
+    <div class="card-header">Flex Column</div>
+    <div class="card-text text-center bg-secondary lh-base text-white">Display flex items vertically
+    </div>
+    <div class="card-body">
+      <div class="d-flex flex-column">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+        <div class="flex-item">3</div>
+      </div>
+    </div>
   </div>
 </section>
+<section class="container my-3" id="flex-column-reverse">
+  <div class="card">
+    <div class="card-header">Flex Column Reverse</div>
+    <div class="card-text text-center bg-secondary lh-base text-white">Display flex items vertically reverse
+    </div>
+    <div class="card-body">
+      <div class="d-flex flex-column-reverse">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+        <div class="flex-item">3</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="container my-3" id="justify-content-start">
+  <div class="card">
+    <div class="card-header">Justify-content-start</div>
+    <div class="card-text text-center bg-secondary lh-base text-white">Display flex items from the start (left-aligned)
+    </div>
+    <div class="card-body">
+      <div class="d-flex justify-content-start">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+        <div class="flex-item">3</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="container my-3" id="justify-content-end">
+  <div class="card">
+    <div class="card-header">Justify-content-start</div>
+    <div class="card-text text-center bg-secondary lh-base text-white">Display flex items from the end (right-aligned)
+    </div>
+    <div class="card-body">
+      <div class="d-flex justify-content-end">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+        <div class="flex-item">3</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="container my-3" id="justify-content-center">
+  <div class="card">
+    <div class="card-header">Justify-content-center</div>
+    <div class="card-text text-center bg-secondary lh-base text-white">Display flex items to the center
+    </div>
+    <div class="card-body">
+      <div class="d-flex justify-content-center">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+        <div class="flex-item">3</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="container my-3" id="justify-content-between">
+  <div class="card">
+    <div class="card-header">Justify-content-between</div>
+    <div class="card-text text-center bg-secondary lh-base text-white">Display flex items in "between"
+    </div>
+    <div class="card-body">
+      <div class="d-flex justify-content-between">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+        <div class="flex-item">3</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="container my-3" id="justify-content-evenly">
+  <div class="card">
+    <div class="card-header">Justify-content-between</div>
+    <div class="card-text text-center bg-secondary lh-base text-white">Display flex items in "evenly"
+    </div>
+    <div class="card-body">
+      <div class="d-flex justify-content-evenly">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+        <div class="flex-item">3</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="container my-3" id="justify-content-around">
+  <div class="card">
+    <div class="card-header">Justify-content-around</div>
+    <div class="card-text text-center bg-secondary lh-base text-white">Display flex items in "around"
+    </div>
+    <div class="card-body">
+      <div class="d-flex justify-content-around">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+        <div class="flex-item">3</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="container my-3" id="flex-fill">
+  <div class="card">
+    <div class="card-header">Flex- fill</div>
+    <div class="card-text text-center bg-secondary lh-base text-white">Display flex items into equal width
+    </div>
+    <div class="card-body">
+      <div class="d-flex">
+        <div class="flex-item flex-fill">1</div>
+        <div class="flex-item flex-fill">2</div>
+        <div class="flex-item flex-fill">3</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="container my-3" id="flex-grow-1">
+  <div class="card">
+    <div class="card-header">Flex-grow-1</div>
+    <div class="card-text text-center bg-secondary lh-base text-white">Display flex items make into grow
+    </div>
+    <div class="card-body">
+      <div class="d-flex">
+        <div class="flex-item flex-grow-1">1</div>
+        <div class="flex-item">2</div>
+        <div class="flex-item">3</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="container my-3" id="flex-grow-0">
+  <div class="card">
+    <div class="card-header">Flex-grow-0</div>
+    <div class="card-text text-center bg-secondary lh-base text-white">Display flex items make into grow
+    </div>
+    <div class="card-body">
+      <div class="d-flex">
+        <div class="flex-item flex-grow-0">1</div>
+        <div class="flex-item">2</div>
+        <div class="flex-item">3</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="container my-3" id="flex-shrink-1">
+  <div class="card">
+    <div class="card-header">Flex-shrink-1</div>
+    <div class="card-text text-center bg-secondary lh-base text-white">
+      Display flex items make into shrink.Tells browser what the minimum size of an element should be. The default value is 1, which is saying, “Take up the same amount of space at all times.”
+    </div>
+    <div class="card-body">
+      <div class="d-flex flex-wrap">
+        <div class="flex-item flex-grow-1">1</div>
+        <div class="flex-item flex-shrink-1">2</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="container my-3" id="flex-wrap">
+  <div class="card">
+    <div class="card-header">Flex-wrap</div>
+    <div class="card-text text-center bg-secondary lh-base text-white">
+      Wrap flex items
+    </div>
+    <div class="card-body">
+      <div class="d-flex flex-wrap">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+        <div class="flex-item">3</div>
+        <div class="flex-item">4</div>
+        <div class="flex-item">5</div>
+        <div class="flex-item">6</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="container my-3" id="flex-wrap-reverse">
+  <div class="card">
+    <div class="card-header">Flex-wrap-reverse</div>
+    <div class="card-text text-center bg-secondary lh-base text-white">
+      Wrap flex items in reverse
+    </div>
+    <div class="card-body">
+      <div class="d-flex flex-wrap-reverse">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+        <div class="flex-item">3</div>
+        <div class="flex-item">4</div>
+        <div class="flex-item">5</div>
+        <div class="flex-item">6</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="container my-3" id="flex-wrap-nowrap">
+  <div class="card">
+    <div class="card-header">Flex-nowrap</div>
+    <div class="card-text text-center bg-secondary lh-base text-white">
+      No Wrap of flex items
+    </div>
+    <div class="card-body">
+      <div class="d-flex flex-nowrap">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+        <div class="flex-item">3</div>
+        <div class="flex-item">4</div>
+        <div class="flex-item">5</div>
+        <div class="flex-item">6</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="container my-3" id="align-item-start">
+  <div class="card">
+    <div class="card-header">Align-items-start</div>
+    <div class="card-text text-center bg-secondary lh-base text-white">
+      align flex items vertically need to specify height
+    </div>
+    <div class="card-body">
+      <div class="d-flex align-items-start" style="height:200px">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+        <div class="flex-item">3</div>
+        <div class="flex-item">4</div>
+        <div class="flex-item">5</div>
+        <div class="flex-item">6</div>
+      </div>
+    </div>
+    <div class="card-text text-center bg-secondary lh-base text-white">
+      align flex items vertically if no height specified
+    </div>
+    <div class="card-body">
+      <div class="d-flex align-items-start">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+        <div class="flex-item">3</div>
+        <div class="flex-item">4</div>
+        <div class="flex-item">5</div>
+        <div class="flex-item">6</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="container my-3" id="align-item-end">
+  <div class="card">
+    <div class="card-header">Align-items-end</div>
+    <div class="card-text text-center bg-secondary lh-base text-white">
+      align flex items vertically to end need to specify height
+    </div>
+    <div class="card-body">
+      <div class="d-flex align-items-end" style="height:200px">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+        <div class="flex-item">3</div>
+        <div class="flex-item">4</div>
+        <div class="flex-item">5</div>
+        <div class="flex-item">6</div>
+      </div>
+    </div>
+    <div class="card-text text-center bg-secondary lh-base text-white">
+      align flex items vertically if no height specified
+    </div>
+    <div class="card-body">
+      <div class="d-flex align-items-start">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+        <div class="flex-item">3</div>
+        <div class="flex-item">4</div>
+        <div class="flex-item">5</div>
+        <div class="flex-item">6</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="container my-3" id="align-item-center">
+  <div class="card">
+    <div class="card-header">Align-items-center</div>
+    <div class="card-text text-center bg-secondary lh-base text-white">
+      align flex items vertically to center need to specify height
+    </div>
+    <div class="card-body">
+      <div class="d-flex align-items-center" style="height:200px">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+        <div class="flex-item">3</div>
+        <div class="flex-item">4</div>
+        <div class="flex-item">5</div>
+        <div class="flex-item">6</div>
+      </div>
+    </div>
+    <div class="card-text text-center bg-secondary lh-base text-white">
+      aligned flex items vertically if no height specified
+    </div>
+    <div class="card-body">
+      <div class="d-flex align-items-start">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+        <div class="flex-item">3</div>
+        <div class="flex-item">4</div>
+        <div class="flex-item">5</div>
+        <div class="flex-item">6</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="container my-3" id="align-item-baseline">
+  <div class="card">
+    <div class="card-header">Align-items-baseline</div>
+    <div class="card-text text-center bg-secondary lh-base text-white">
+      align flex items vertically to baseline need to specify height
+    </div>
+    <div class="card-body">
+      <div class="d-flex align-items-baseline" style="height:200px">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+        <div class="flex-item">3</div>
+        <div class="flex-item">4</div>
+        <div class="flex-item">5</div>
+        <div class="flex-item">6</div>
+      </div>
+    </div>
+    <div class="card-text text-center bg-secondary lh-base text-white">
+      aligned flex items vertically if no height specified
+    </div>
+    <div class="card-body">
+      <div class="d-flex align-items-baseline">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+        <div class="flex-item">3</div>
+        <div class="flex-item">4</div>
+        <div class="flex-item">5</div>
+        <div class="flex-item">6</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="container my-3" id="align-item-stretch">
+  <div class="card">
+    <div class="card-header">Align-items-stretch</div>
+    <div class="card-text text-center bg-secondary lh-base text-white">
+      align flex items vertically to stretch need to specify height
+    </div>
+
+    <div class="card-body">
+      <div class="card-text text-center bg-secondary lh-base text-white">
+        if flex item as height of 50px so stretched not working
+      </div>
+      <div class="d-flex align-items-stretch" style="height:200px">
+        <div class="flex-item">1</div>
+        <div class="flex-item" style="height:100px">2</div>
+        <div class="flex-item">3</div>
+        <div class="flex-item">4</div>
+        <div class="flex-item">5</div>
+        <div class="flex-item">6</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="card-text text-center bg-secondary lh-base text-white">
+        if flex item as height of unset prop so stretch working
+      </div>
+      <div class="d-flex align-items-stretch" style="height:200px">
+        <div class="flex-item" style="height:unset">1</div>
+        <div class="flex-item" style="height:unset">2</div>
+        <div class="flex-item" style="height:unset">3</div>
+        <div class="flex-item" style="height:unset">4</div>
+        <div class="flex-item" style="height:unset">5</div>
+        <div class="flex-item" style="height:unset">6</div>
+      </div>
+    </div>
+    <div class="card-text text-center bg-secondary lh-base text-white">
+      aligned flex items vertically if no height specified
+    </div>
+    <div class="card-body">
+      <div class="d-flex align-items-stretch">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+        <div class="flex-item">3</div>
+        <div class="flex-item">4</div>
+        <div class="flex-item">5</div>
+        <div class="flex-item">6</div>
+      </div>
+    </div>
+     <div class="card-body">
+      <div class="code-slot shadow rounded-3 p-3"></div>
+    </div>
+  </div>
+</section>
+
+<section class="container my-3" id="align-content-start">
+  <div class="card">
+    <div class="card-header">Align-content-start</div>
+    <div class="card-body">
+      <div class="d-flex align-content-start flex-wrap" style="height:200px">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+        <div class="flex-item">3</div>
+        <div class="flex-item">4</div>
+        <div class="flex-item">5</div>
+        <div class="flex-item">6</div>
+        <div class="flex-item">7</div>
+        <div class="flex-item">8</div>
+        <div class="flex-item">9</div>
+        <div class="flex-item">10</div>
+        <div class="flex-item">11</div>
+        <div class="flex-item">12</div>
+      </div>
+    </div>
+ <div class="card-body">
+      <div class="code-slot shadow rounded-3 p-3"></div>
+    </div>
+  </div>
+</section>
+
+<section class="container my-3" id="align-content-end">
+  <div class="card">
+    <div class="card-header">Align-content-end</div>
+    <div class="card-body">
+      <div class="d-flex align-content-end flex-wrap" style="height:200px">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+        <div class="flex-item">3</div>
+        <div class="flex-item">4</div>
+        <div class="flex-item">5</div>
+        <div class="flex-item">6</div>
+        <div class="flex-item">7</div>
+        <div class="flex-item">8</div>
+        <div class="flex-item">9</div>
+        <div class="flex-item">10</div>
+        <div class="flex-item">11</div>
+        <div class="flex-item">12</div>
+      </div>
+    </div>
+ <div class="card-body">
+      <div class="code-slot shadow rounded-3 p-3"></div>
+    </div>
+  </div>
+</section>
+
+<section class="container my-3" id="align-content-center">
+  <div class="card">
+    <div class="card-header">Align-content-center</div>
+    <div class="card-body">
+      <div class="d-flex align-content-center flex-wrap" style="height:200px">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+        <div class="flex-item">3</div>
+        <div class="flex-item">4</div>
+        <div class="flex-item">5</div>
+        <div class="flex-item">6</div>
+        <div class="flex-item">7</div>
+        <div class="flex-item">8</div>
+        <div class="flex-item">9</div>
+        <div class="flex-item">10</div>
+        <div class="flex-item">11</div>
+        <div class="flex-item">12</div>
+      </div>
+    </div>
+ <div class="card-body">
+      <div class="code-slot shadow rounded-3 p-3"></div>
+    </div>
+  </div>
+</section>
+
+<section class="container my-3" id="align-content-between">
+  <div class="card">
+    <div class="card-header">Align-content-between</div>
+    <div class="card-body">
+      <div class="d-flex align-content-between flex-wrap" style="height:200px">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+        <div class="flex-item">3</div>
+        <div class="flex-item">4</div>
+        <div class="flex-item">5</div>
+        <div class="flex-item">6</div>
+        <div class="flex-item">7</div>
+        <div class="flex-item">8</div>
+        <div class="flex-item">9</div>
+        <div class="flex-item">10</div>
+        <div class="flex-item">11</div>
+        <div class="flex-item">12</div>
+      </div>
+    </div>
+ <div class="card-body">
+      <div class="code-slot shadow rounded-3 p-3"></div>
+    </div>
+  </div>
+</section>
+
+<section class="container my-3" id="align-content-around">
+  <div class="card">
+    <div class="card-header">Align-content-around</div>
+    <div class="card-body">
+      <div class="d-flex align-content-around flex-wrap" style="height:200px">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+        <div class="flex-item">3</div>
+        <div class="flex-item">4</div>
+        <div class="flex-item">5</div>
+        <div class="flex-item">6</div>
+        <div class="flex-item">7</div>
+        <div class="flex-item">8</div>
+        <div class="flex-item">9</div>
+        <div class="flex-item">10</div>
+        <div class="flex-item">11</div>
+        <div class="flex-item">12</div>
+      </div>
+    </div>
+ <div class="card-body">
+      <div class="code-slot shadow rounded-3 p-3"></div>
+    </div>
+  </div>
+</section>
+
+<section class="container my-3" id="align-content-stretch">
+  <div class="card">
+    <div class="card-header">Align-content-stretch</div>
+    <div class="card-body">
+      <div class="d-flex align-content-stretch flex-wrap" style="height:200px">
+        <div class="flex-item" style="height:unset">1</div>
+        <div class="flex-item" style="height:unset">2</div>
+        <div class="flex-item" style="height:unset">3</div>
+        <div class="flex-item" style="height:unset">4</div>
+        <div class="flex-item" style="height:unset">5</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="code-slot shadow rounded-3 p-3"></div>
+    </div>
+  
+</section>
+
+<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+
 <script>
-  function moveToTop() {
-    return window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
-  }
-  window.addEventListener('scroll', (event) => {
-    if (window.pageYOffset >= 300) {
-      document.getElementById('floating-btn').classList.replace('invisible', 'visible')
-    } else {
-      document.getElementById('floating-btn').classList.replace('visible', 'invisible')
+console.clear();
+  var doc = document.querySelectorAll('*[id]:not([id=""])')
+  doc.forEach((item, index) => {
+    var codeSlot = item.querySelector('.code-slot');
+    if (codeSlot) {
+      var code = item.querySelector('section > .card .card-body');
+      codeSlot.appendChild(createDetailSummary(code))
     }
-    console.log('Scrolling...', window.pageYOffset);
-  });
+
+ function createDetailSummary(node) {
+
+    const details = document.createElement('details');
+    const p1 = document.createElement('summary');
+    var node = node.cloneNode(true);
+    const p2 = document.createElement('pre');
+
+    p1.textContent = 'show code snippet';
+    p2.classList.add('prettyprint')
+    p2.textContent = node.innerHTML;
+
+    details.appendChild(p1);
+    details.appendChild(p2);
+
+    return details;
+}
+
+
+
+  })
 </script>
