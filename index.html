@@ -61,9 +61,12 @@
 </section>
 
 <main>
+
   <div class="container-fluid">
     <div class="row">
-      <div class="col-12 col-sm-12 col-md-4 col-lg-3">
+      <div class="col-12 col-sm-12 col-md-4 col-lg-3" >
+
+ 
         <section class="my-3 position-sticky top-0" id="navigate">
           <div class="card">
             <div class="card-header">Navigate</div>
@@ -1114,7 +1117,7 @@
             </div>
           </div>
         </section>
-         <section class="container my-3" id="align-self-start">
+        <section class="container my-3" id="align-self-start">
           <div class="card">
             <div class="card-header">Align-self-start</div>
             <div class="card-body">
@@ -1124,6 +1127,40 @@
                 <div class="flex-item align-self-start" style="height:unset">3</div>
                 <div class="flex-item align-self-start" style="height:unset">4</div>
                 <div class="flex-item align-self-start" style="height:unset">5</div>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="code-slot shadow rounded-3 p-3"></div>
+            </div>
+          </div>
+        </section>
+        <section class="container my-3" id="align-self-end">
+          <div class="card">
+            <div class="card-header">Align-self-end</div>
+            <div class="card-body">
+              <div class="d-flex" style="height:200px">
+                <div class="flex-item align-self-end" style="height:unset">1</div>
+                <div class="flex-item align-self-end" style="height:75px">2</div>
+                <div class="flex-item align-self-end" style="height:unset">3</div>
+                <div class="flex-item align-self-end" style="height:unset">4</div>
+                <div class="flex-item align-self-end" style="height:unset">5</div>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="code-slot shadow rounded-3 p-3"></div>
+            </div>
+          </div>
+        </section>
+        <section class="container my-3" id="align-self-baseline">
+          <div class="card">
+            <div class="card-header">Align-self-baseline</div>
+            <div class="card-body">
+              <div class="d-flex" style="height:200px">
+                <div class="flex-item align-self-baseline" style="height:unset">1</div>
+                <div class="flex-item align-self-baseline" style="height:75px">2</div>
+                <div class="flex-item align-self-baseline" style="height:unset">3</div>
+                <div class="flex-item align-self-baseline" style="height:unset">4</div>
+                <div class="flex-item align-self-baseline" style="height:unset">5</div>
               </div>
             </div>
             <div class="card-body">
@@ -1162,16 +1199,21 @@
   })
 </script>
 <style>
-  .card-header{
-    border-top-left-radius:20px !important;
-    border-top--right-radius:20px !important;
+  .card-header {
+    border-top-left-radius: 20px !important;
+    border-top--right-radius: 20px !important;
   }
-  .card{
+
+  .card {
     box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
   }
-  .card,.code-slot,pre.prettyprint.prettyprinted{
-    border-radius:20px !important;
-      }
+
+  .card,
+  .code-slot,
+  pre.prettyprint.prettyprinted {
+    border-radius: 20px !important;
+  }
+
   /*! Color themes for Google Code Prettify | MIT License | github.com/jmblog/color-themes-for-google-code-prettify */
   .prettyprint {
     background: #131513;
