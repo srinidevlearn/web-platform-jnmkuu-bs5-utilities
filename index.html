@@ -1992,12 +1992,5 @@
     details.appendChild(p2);
     return details;
   }
-  addJsSnippets();
-
-  function addJsSnippets() {
-    var snippet = document.querySelector('#scroll_code_snippet');
-    var jsCode = document.querySelector('#js-code');
-    jsCode.textContent = snippet.innerHTML;
-    codeSlot.appendChild(createDetailSummary(snippet));
-  }
+ 
 </script>
